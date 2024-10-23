@@ -13,23 +13,14 @@
 char *_strchr(char *s, char c)
 {
 	unsigned int i;
-	unsigned int j;
-	unsigned int k;
 	char *dest;
 
 	i = 0;
-	k = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			j = i;
-			while (s[j] != '\0')
-			{
-				dest[k] = s[j];
-				j++;
-				k++;
-			}
+			dest = &s[i];
 			return (dest);
 		}
 		i++;
