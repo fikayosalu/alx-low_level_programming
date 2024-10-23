@@ -12,11 +12,12 @@
 
 char *_strchr(char *s, char c)
 {
-	unsigned int i;
+	unsigned int i, j;
 	char *dest;
 
 	i = 0;
-	while (s[i] != '\0')
+	j = _strlen(s) + 1;
+	while (i <= j)
 	{
 		if (s[i] == c)
 		{
@@ -26,4 +27,21 @@ char *_strchr(char *s, char c)
 		i++;
 	}
 	return (NULL);
+}
+
+/**
+ * _strlen - Return the length of a string
+ * @s: The string
+ *
+ * Return: The length of the string
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
