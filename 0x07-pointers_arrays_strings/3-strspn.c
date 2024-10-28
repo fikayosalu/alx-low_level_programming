@@ -11,22 +11,23 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int 0;
-}
-
-/**
- * _strlen - Return the length of a string
- * @s: The string
- *
- * Return: The length of the string
- */
-
-int _strlen(char *s)
-{
-	int i;
+	int i, j, n;
 
 	i = 0;
+	n = 0;
 	while (s[i] != '\0')
+	{
+		j = 0;
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+				n++;
+			j++;
+		}
+		if (n <= i)
+			break;
 		i++;
-	return (i);
+	}
+
+	return (n);
 }
